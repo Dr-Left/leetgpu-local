@@ -1,18 +1,6 @@
-# LeetGPU
+# LeetGPU Local Testing Repo
 
-This is the challenge set for [LeetGPU.com](https://leetgpu.com). We welcome contributions and bug reports!
-
-## Overview
-
-Each challenge includes problem descriptions, reference implementation, test cases, and starter templates for multiple GPU programming frameworks.
-
-## Challenge Structure
-
-Each challenge contains:
-
-- **`challenge.html`**: Detailed problem description, examples, and constraints
-- **`challenge.py`**: Reference implementation, test cases, and challenge metadata
-- **`starter/`**: Template files for each supported framework
+<img width="1136" height="577" alt="image" src="https://github.com/user-attachments/assets/bdb37d54-bfcd-4f40-97ca-f5670eae5dc3" />
 
 ## Local Testing
 
@@ -35,6 +23,22 @@ python scripts/test_local.py challenges/easy/1_vector_add solution.triton.py --p
 ```
 
 The harness compares your solution against the challenge's `reference_impl` for correctness, and benchmarks performance against the PyTorch baseline.
+
+# About LeetGPU
+This is the challenge set for [LeetGPU.com](https://leetgpu.com). We welcome contributions and bug reports!
+
+## Overview
+
+Each challenge includes problem descriptions, reference implementation, test cases, and starter templates for multiple GPU programming frameworks.
+
+## Challenge Structure
+
+Each challenge contains:
+
+- **`challenge.html`**: Detailed problem description, examples, and constraints
+- **`challenge.py`**: Reference implementation, test cases, and challenge metadata
+- **`starter/`**: Template files for each supported framework
+
 
 ## Contributing
 
