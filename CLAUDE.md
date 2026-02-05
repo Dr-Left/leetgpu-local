@@ -130,6 +130,28 @@ Must compile/run without errors but not solve the problem. No comments except th
 - CuTe: `challenges/easy/1_vector_add/starter/starter.cute.py`
 - Mojo: `challenges/easy/1_vector_add/starter/starter.mojo`
 
+## Local Testing
+
+Test Triton solutions locally with `scripts/test_local.py`:
+
+```bash
+# Run all tests (functional + performance with baseline comparison)
+python scripts/test_local.py challenges/easy/1_vector_add solution.triton.py
+
+# Functional tests only
+python scripts/test_local.py challenges/easy/1_vector_add solution.triton.py --functional-only
+
+# Performance only with custom iterations
+python scripts/test_local.py challenges/easy/1_vector_add solution.triton.py --perf-only --iterations 500
+```
+
+**What it does:**
+- Loads challenge dynamically from path
+- Compares solution output against `reference_impl` for correctness
+- Benchmarks solution vs PyTorch baseline (min/median/max timing + ratio)
+
+**Requirements:** `conda activate leetgpu` (needs `torch` and `triton`)
+
 ## Creation Workflow
 
 1. Create directory: `mkdir -p challenges/<difficulty>/<number>_<name>/starter`
@@ -140,7 +162,8 @@ Must compile/run without errors but not solve the problem. No comments except th
    ```bash
    python -c "from challenges.<difficulty>.<number>_<name>.challenge import Challenge; c = Challenge(); print('Tests:', len(c.generate_functional_test()))"
    ```
-6. Lint: `pre-commit run --all-files`
+6. Test locally (optional): `python scripts/test_local.py challenges/<difficulty>/<number>_<name> solution.triton.py`
+7. Lint: `pre-commit run --all-files`
 
 ## Checklist
 
